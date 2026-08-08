@@ -6,10 +6,11 @@ import { Noticias } from "../pages/Noticias";
 
 
 
+
 export const AppRoute = createBrowserRouter([
     {path:'/',element:<App />,children:[
         {index:true,element:<Home />},
-        {path:'/Noticias',element:<Noticias />}
+        {path:'Noticias',element:<Noticias />}
     ]}
     
 ])

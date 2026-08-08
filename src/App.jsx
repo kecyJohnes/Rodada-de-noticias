@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
+    <h1 className='cabecalho'>Notícias App</h1>
     <NavigationBar />
-    <h1>Notícias App</h1>
     <Outlet />
     </>
   )

@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.cabecalho {
+    @apply text-center text-2xl bg-red-500 text-white font-bold p-2 
+} 

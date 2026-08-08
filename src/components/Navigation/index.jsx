@@ -4,7 +4,7 @@ export const NavigationBar = () => {
 return(
     <nav>
         <Link to='/'>Home</Link>
-        <Link to='/Noticias'>Notícias</Link>
+        <Link to='Noticias'>Notícias</Link>
     </nav>
 )
 }

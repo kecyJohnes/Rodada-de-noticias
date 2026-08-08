@@ -1,6 +1,8 @@
+import { Outlet } from "react-router-dom"
+
 export const Noticias = () =>{
 
-    const [noticias, setNoticias]=useState([])
+    // const [noticias, setNoticias]=useState([])
 
     const apiKey='fc5cab5ccbc34b2e811b65e8870c16e5'
     const url = 'https://api.worldnewsapi.com/search-news?language=pt&source-country=br'
@@ -22,11 +24,12 @@ export const Noticias = () =>{
             console.error(err.message)
         }
     }
-        fetchApi()
+        // fetchApi()
     return(
         <div>
             <h2>Notícias 24 Horas</h2>
-            <div>
+            <Outlet />
+            {/* <div>
                 {noticias.news.map((noticia)=>{
                     return(
                         <div key={noticia.id}>
@@ -34,7 +37,7 @@ export const Noticias = () =>{
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
         </div>
     )
 }
