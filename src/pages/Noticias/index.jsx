@@ -1,34 +1,39 @@
+import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
 
-export const Noticias = () =>{
 
-    // const [noticias, setNoticias]=useState([])
+export const Noticias = () => {
 
-    const apiKey='fc5cab5ccbc34b2e811b65e8870c16e5'
+    const [noticias, setNoticias]=useState([])
+
+    const apiKey = 'fc5cab5ccbc34b2e811b65e8870c16e5'
     const url = 'https://api.worldnewsapi.com/search-news?language=pt&source-country=br'
 
-    const fetchApi = async () =>{
-        try {
-            const res = await fetch(url,{
-            method:'GET',
-            headers:{
-                'x-api-key': apiKey
-            }
-           
-            })
-            const data = await res.json()
-            console.log(data)
-            setNoticias(data.news)
+    useEffect(() => {
+        const fetchApi = async () => {
+            try {
+                const res = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'x-api-key': apiKey
+                    }
 
-        } catch (err) {
-            console.error(err.message)
+                })
+                const data = await res.json()
+                console.log(data.news)
+                setNoticias(data.news)
+
+            } catch (err) {
+                console.error(err.message)
+            }
         }
-    }
-        // fetchApi()
-    return(
+        fetchApi()
+    },[])
+
+
+    return (
         <div>
             <h2>Notícias 24 Horas</h2>
-            <Outlet />
             {/* <div>
                 {noticias.news.map((noticia)=>{
                     return(
@@ -37,7 +42,12 @@ export const Noticias = () =>{
                         </div>
                     )
                 })}
-            </div> */}
+            </div> */
+            noticias.map(noticia=>(
+                <div key={noticia.id}>
+                    <h2>{noticia.title}</h2>
+                    </div>
+            ))}
         </div>
     )
 }
