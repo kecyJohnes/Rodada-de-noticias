@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+.container{
+    @apply container mx-auto mt-10
+}
+
+.container h2{
+    @apply text-center text-4xl font-bold text-red-500 text-shadow-xs
+}
+
+.container p{
+    @apply text-center text-xl
+}
+
+.section{
+@apply grid grid-cols-5 h-screen container
+}
+
+.article1{
+    @apply bg-amber-300 col-span-4
+}
+
+.article2{
+    @apply bg-amber-800
+}

@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+
+.container{
+    @apply container mx-auto
+}
+
+.container h2{
+    @apply text-center text-4xl font-bold text-red-500 my-10
+}

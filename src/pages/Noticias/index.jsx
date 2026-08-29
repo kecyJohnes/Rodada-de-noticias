@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
+import Style from './noticias.module.css'
 
 
 export const Noticias = () => {
@@ -32,7 +33,7 @@ export const Noticias = () => {
 
 
     return (
-        <div>
+        <div className={Style.container}>
             <h2>Notícias 24 Horas</h2>
             {/* <div>
                 {noticias.news.map((noticia)=>{
@@ -45,7 +46,7 @@ export const Noticias = () => {
             </div> */
             noticias.map(noticia=>(
                 <div key={noticia.id}>
-                    <h2>{noticia.title}</h2>
+                    <h3>{noticia.title}</h3>
                     </div>
             ))}
         </div>
