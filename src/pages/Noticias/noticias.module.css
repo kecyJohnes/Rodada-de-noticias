@@ -1,7 +1,23 @@
 @import 'tailwindcss';
 
+h3{
+    @apply text-center font-bold
+}
+
 .container{
-    @apply container mx-auto
+    @apply container mx-auto 
+}
+
+.newsContainer{
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 
+}
+
+.news{
+    @apply border border-gray-400 rounded-md
+}
+
+.container div{
+    @apply border rounded-md border-gray-400
 }
 
 .container h2{
