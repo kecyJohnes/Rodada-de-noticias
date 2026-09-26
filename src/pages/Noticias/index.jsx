@@ -8,8 +8,8 @@ export const Noticias = () => {
 
     const [noticias, setNoticias] = useState([])
 
-    const apiKey = 'fc5cab5ccbc34b2e811b65e8870c16e5'
-    const url = 'https://api.worldnewsapi.com/search-news?language=pt&source-country=br'
+    const apiKey = import.meta.env.VITE_API_KEY
+    const url = import.meta.env.VITE_URL
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -30,7 +30,7 @@ export const Noticias = () => {
 
                 })
                 const data = await res.json()
-                console.log(data.news)
+  
                 setNoticias(data.news)
 
                 Swal.close()
@@ -52,6 +52,7 @@ export const Noticias = () => {
                     <div className={Style.news} key={noticia.id}>
                         <h3>{noticia.title}</h3>
                         <img src={noticia.image} alt={noticia.title} />
+                        <p>{noticia.summary}</p>
                         <Link to={`/noticia/${noticia.id}`}>Acessar</Link>
                     </div>
                 )
